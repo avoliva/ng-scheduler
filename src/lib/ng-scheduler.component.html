@@ -1,0 +1,42 @@
+
+<div class="scheduler-main">
+  <div class="date-switcher">
+    <div class="arrow-left" (click)="changeDates(-7)"><i class="fa fa-chevron-left"></i></div>
+    <div class="current-dates" (click)="dp.toggleCalendar()">
+      <div class="overlay"><span>{{formatDate(schedulerOptions.start_day, 'MMM D, YYYY')}} - {{formatDate(schedulerOptions.end_day, 'MMM D, YYYY')}}</span></div>
+      <div class="underlay">
+        <input class="form-control" placeholder="{{formatDate(schedulerOptions.start_day, 'MMM D, YYYY')}} - {{formatDate(schedulerOptions.end_day, 'MMM D, YYYY')}}" angular-mydatepicker name="mydate" [(ngModel)]="model" [options]="datePickerOptions" #dp="angular-mydatepicker" (dateChanged)="onDateChanged($event)" />
+      </div>
+    </div>
+    <div class="arrow-right" (click)="changeDates(7)"><i class="fa fa-chevron-right"></i></div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="header-row">
+    <div class="employee-column">
+      <div class="inner">
+        <p class="header-title">Employees</p>
+      </div>
+    </div>
+    <div class="day-column" *ngFor="let day of daysOfWeek">
+      <div class="inner">
+        <p class="header-title">{{formatDate(day, 'ddd')}}</p>
+        <p class="header-subtitle">{{formatDate(day, 'MMM D')}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="scheduler-row" *ngFor="let employee of schedulerOptions.employees; let i = index">
+    <div class="employee-column">
+      <div class="inner">
+        <p class="list-text"><strong>{{employee}}</strong></p>
+        <p class="list-subtext" *ngIf="schedulerOptions.showHours || schedulerOptions.showEarnings"><span *ngIf="schedulerOptions.showHours">{{getHours(i)}}</span><span *ngIf="schedulerOptions.showEarnings">${{getEarnings(i)}}</span></p>
+      </div>
+    </div>
+    <div class="day-column" *ngFor="let day of daysOfWeek">
+      <div class="inner">
+        <p class="list-text" *ngFor="let shift of getShifts(day, i)">
+          {{formatDate(shift.start_time, 'hA')}} - {{formatDate(shift.end_time, 'hA')}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
