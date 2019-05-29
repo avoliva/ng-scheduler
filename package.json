@@ -1,12 +1,22 @@
 {
   "name": "ng-scheduler",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0",
     "@angular/forms": "~7.2.0",
     "@angular/platform-browser": "~7.2.0",
-    "@angular/platform-browser-dynamic": "~7.2.0",
+    "@angular/platform-browser-dynamic": "~7.2.0"
+  },
+  "depenencies": {
     "angular-mydatepicker": "0.0.9",
     "font-awesome": "^4.7.0",
     "moment": "^2.24.0"
