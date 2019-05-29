@@ -1,6 +1,6 @@
 {
   "name": "ng-scheduler",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -14,9 +14,7 @@
     "@angular/core": "^7.2.0",
     "@angular/forms": "~7.2.0",
     "@angular/platform-browser": "~7.2.0",
-    "@angular/platform-browser-dynamic": "~7.2.0"
-  },
-  "depenencies": {
+    "@angular/platform-browser-dynamic": "~7.2.0",
     "angular-mydatepicker": "0.0.9",
     "font-awesome": "^4.7.0",
     "moment": "^2.24.0"
