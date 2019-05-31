@@ -9,7 +9,7 @@ class SchedulerShift {
 }
 
 class SchedulerOptions {
-  shifts: any[];
+  shifts: SchedulerShift[];
   employees: string[];
   start_day: moment.Moment;
   end_day: moment.Moment;

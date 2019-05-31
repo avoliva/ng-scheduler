@@ -1,24 +1,43 @@
-# NgScheduler
+# Angular Scheduler
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+Simple weekly schedule display. This is just a display. Adding shifts, employees, etc. would be handled on your end.
 
-## Code scaffolding
+![Example](https://i.ibb.co/0mrpTQj/Screen-Shot-2019-05-31-at-10-35-37-AM.png)
 
-Run `ng generate component component-name --project ng-scheduler` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-scheduler`.
-> Note: Don't forget to add `--project ng-scheduler` or else it will be added to the default project in your `angular.json` file. 
+## Installation
 
-## Build
+`npm install ng-scheduler`
 
-Run `ng build ng-scheduler` to build the project. The build artifacts will be stored in the `dist/` directory.
+Add SchedulerComponent to your modules.
 
-## Publishing
+`<ng-scheduler [options]="schedulerOptions"></ng-scheduler>` in your HTML.
 
-After building your library with `ng build ng-scheduler`, go to the dist folder `cd dist/ng-scheduler` and run `npm publish`.
+## Arguments
 
-## Running unit tests
+#### Options
 
-Run `ng test ng-scheduler` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* ``shifts`` (SchedulerShifts[]) - Array of SchedulerShifts
+* ``employees`` (string[]) - Array of strings
+* ``start_day`` (datetime, optional) - Start of week. Default based on current week. 
+* ``end_day`` (datetime, optional) - End of week. Default based on current week.
+* ``showEarnings`` (bool, optional) - Show earnings below employee name. Default `true`
+* ``showHours`` (bool, optional) - Show hours below employee name. Default `true`
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#### SchedulerShifts
+
+* ``name`` (str) - Name of employee. Must match a name in `employees`.
+* ``start_time`` (datetime) - Start of shift.
+* ``end_time`` (datetime) - End of shift.
+* ``hours`` (decimal, optional) - Number of hours worked in decimal form.
+* ``earnings`` (decimal, optional) - Earnings.
+
+
+## Callbacks
+
+* ``optionsChanged(changes)`` - Called whenever the options are changed. `changed` is the object from `ngOnChanges`.
+* ``dateChanged(obj)`` - Called when the dates are changed. obj includes `start_day` and `end_day`.
+* ``scheduleClicked($event)`` - Called when a schedule is clicked.
+* ``dateClicked($event)`` - Called when a date is clicked.
+
+
