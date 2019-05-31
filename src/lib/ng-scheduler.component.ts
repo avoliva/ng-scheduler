@@ -34,7 +34,7 @@ export class SchedulerComponent implements OnInit {
   @Output() optionsChanged = new EventEmitter<any>();
   @Output() dateChanged = new EventEmitter<any>();
   @Output() dateClicked = new EventEmitter<any>();
-  @Output() scheeduleClicked = new EventEmitted<any>();
+  @Output() scheduleClicked = new EventEmitter<any>();
 
   @ViewChild("dp") dp;
 
@@ -127,12 +127,12 @@ export class SchedulerComponent implements OnInit {
     });
   }
 
-  public onDateClicked($event): void {
-    this.dateClicked.emit($event);
+  public onDateClick(day): void {
+    this.dateClicked.emit(day);
   }
 
-  public onScheduleClicked($event): void {
-    this.scheduleClicked.emit($event);
+  public onScheduleClick(shift): void {
+    this.scheduleClicked.emit(shift);
   }
 
 }

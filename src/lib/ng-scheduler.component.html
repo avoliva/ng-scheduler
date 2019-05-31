@@ -33,9 +33,9 @@
         <p class="list-subtext"><span *ngIf="schedulerOptions.showEarnings">${{getEarnings(i)}}</span></p>
       </div>
     </div>
-    <div class="day-column" *ngFor="let day of daysOfWeek" (click)="onDateClick($event)">
+    <div class="day-column" *ngFor="let day of daysOfWeek" (click)="onDateClick(day)">
       <div class="inner">
-        <p class="list-text" (click)="onScheduleClick($event)" *ngFor="let shift of getShifts(day, i)">
+        <p class="list-text" (click)="onScheduleClick(shift)" *ngFor="let shift of getShifts(day, i)">
           {{formatDate(shift.start_time, 'hA')}} - {{formatDate(shift.end_time, 'hA')}}
         </p>
       </div>

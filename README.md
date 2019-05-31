@@ -26,6 +26,7 @@ Add SchedulerComponent to your modules.
 
 #### SchedulerShifts
 
+* ``id`` (any, optional) - A unique identifier.
 * ``name`` (str) - Name of employee. Must match a name in `employees`.
 * ``start_time`` (datetime) - Start of shift.
 * ``end_time`` (datetime) - End of shift.
@@ -37,7 +38,7 @@ Add SchedulerComponent to your modules.
 
 * ``optionsChanged(changes)`` - Called whenever the options are changed. `changed` is the object from `ngOnChanges`.
 * ``dateChanged(obj)`` - Called when the dates are changed. obj includes `start_day` and `end_day`.
-* ``scheduleClicked($event)`` - Called when a schedule is clicked.
-* ``dateClicked($event)`` - Called when a date is clicked.
+* ``scheduleClicked(shift)`` - Called when a schedule is clicked.
+* ``dateClicked(date)`` - Called when a date is clicked.
 
 

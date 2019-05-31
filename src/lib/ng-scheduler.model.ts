@@ -1,6 +1,7 @@
 import * as moment from 'moment';
 
 class SchedulerShift {
+  id: any;
   name: string;
   start_time: moment.Moment;
   end_time: moment.Moment;
@@ -9,7 +10,7 @@ class SchedulerShift {
 }
 
 class SchedulerOptions {
-  shifts: SchedulerShift[];
+  shifts: any[];
   employees: string[];
   start_day: moment.Moment;
   end_day: moment.Moment;
