@@ -8,7 +8,7 @@
     & > div {
       float: left;
       padding: 5px;
-      border: 1px solid #262626;
+      border: 1px solid rgba(0, 0, 0, 0.25);
       margin-bottom: 20px;
       cursor: pointer;
     }
@@ -16,7 +16,7 @@
       i {
         font-size: 10pt;
         color: #262626;
-        opacity: 0.75;
+        opacity: 0.65;
         font-weight: 300;
         padding: 0 5px;
       }
@@ -24,7 +24,7 @@
     .current-dates {
       padding: 5px 15px;
       position: relative;
-      width: 175px;
+      width: 190px;
       .overlay {
         position: absolute;
         z-index: 3;
@@ -74,6 +74,16 @@
     border: 1px solid #262626;
     vertical-align: top;
     background-color: white;
+    .inner {
+      padding-left: 35px;
+      .list-text,
+      .header-title {
+        text-align: left;
+      }
+      .header-title {
+        padding-top: 10px;
+      }
+    }
   }
   .day-column {
     width: 130px;
@@ -84,6 +94,23 @@
     border-left: none;
     background-color: white;
   }
+  .header-row {
+    .day-column,
+    .employee-column {
+      background-color: #39454B;
+      .header-title {
+        color: white;
+        text-transform: uppercase;
+        font-size: 10pt;
+        letter-spacing: 0.09em;
+      }
+      .header-subtitle {
+        color: white;
+        font-size: 9pt;
+        text-align: center;
+      }
+    }
+  }
   .inner {
     padding: 5px;
   }
@@ -92,6 +119,7 @@
     font-size: 12pt;
     color: #262626;
     margin: 5px 0;
+    text-align: center;
   }
   .header-subtitle {
     font-size: 10pt;
@@ -103,6 +131,7 @@
     color: #262626;
     font-size: 11pt;
     margin: 5px 0;
+    text-align: center;
   }
   .list-subtext {
     color: #262626;
@@ -118,6 +147,13 @@
       border-top: none;
     }
 
+    .employee-column {
+      .inner {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    }
+
     .day-column {
       .inner {
         padding: 0px;
@@ -125,9 +161,11 @@
       .list-text {
         color: #262626;
         font-size: 9pt;
-        text-align: left;
-        border-bottom: 1px solid #262626;
-        padding: 0px 0 3px 10px;
+        text-align: center;
+        padding: 5px 0 3px 0px;
+        background-color: #F2D9A3;
+        margin-top: 0px;
+        margin-bottom: 5px;
       }
     }
   }

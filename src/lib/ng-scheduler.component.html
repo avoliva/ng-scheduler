@@ -1,9 +1,10 @@
 
 <div class="scheduler-main">
+
   <div class="date-switcher">
     <div class="arrow-left" (click)="changeDates(-7)"><i class="fa fa-chevron-left"></i></div>
     <div class="current-dates" (click)="dp.toggleCalendar()">
-      <div class="overlay"><span>{{formatDate(schedulerOptions.start_day, 'MMM D, YYYY')}} - {{formatDate(schedulerOptions.end_day, 'MMM D, YYYY')}}</span></div>
+      <div class="overlay"><span><i class="fa fa-calendar"></i>{{formatDate(schedulerOptions.start_day, 'MMM D, YYYY')}} &mdash; {{formatDate(schedulerOptions.end_day, 'MMM D, YYYY')}}</span></div>
       <div class="underlay">
         <input class="form-control" placeholder="{{formatDate(schedulerOptions.start_day, 'MMM D, YYYY')}} - {{formatDate(schedulerOptions.end_day, 'MMM D, YYYY')}}" angular-mydatepicker name="mydate" [(ngModel)]="model" [options]="datePickerOptions" #dp="angular-mydatepicker" (dateChanged)="onDateChanged($event)" />
       </div>
@@ -28,7 +29,8 @@
     <div class="employee-column">
       <div class="inner">
         <p class="list-text"><strong>{{employee}}</strong></p>
-        <p class="list-subtext" *ngIf="schedulerOptions.showHours || schedulerOptions.showEarnings"><span *ngIf="schedulerOptions.showHours">{{getHours(i)}}</span><span *ngIf="schedulerOptions.showEarnings">${{getEarnings(i)}}</span></p>
+        <p class="list-subtext" *ngIf="schedulerOptions.showHours"><span *ngIf="schedulerOptions.showHours">{{getHours(i)}}</span></p>
+        <p class="list-subtext"><span *ngIf="schedulerOptions.showEarnings">${{getEarnings(i)}}</span></p>
       </div>
     </div>
     <div class="day-column" *ngFor="let day of daysOfWeek">

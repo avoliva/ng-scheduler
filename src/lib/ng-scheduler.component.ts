@@ -109,7 +109,7 @@ export class SchedulerComponent implements OnInit {
     let earnings = 0;
     for (let shift of this.schedulerOptions.shifts[index]) {
       if (moment(shift.start_time) >= this.schedulerOptions.start_day && moment(shift.start_time) <= this.schedulerOptions.end_day) {
-        earnings += shift.earnings || 0;
+        earnings += Number(shift.earnings) || 0;
       }
     }
     return earnings.toFixed(2);
