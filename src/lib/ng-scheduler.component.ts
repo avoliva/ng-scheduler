@@ -17,7 +17,7 @@ const moment = moment_;
 export class SchedulerComponent implements OnInit {
   public model: IMyDateModel = null;
 
-  private referenceDay: moment_.Moment = moment();
+  @Input() referenceDay: moment_.Moment = moment();
 
   public daysOfWeek: moment_.Moment[] = []
 
@@ -47,6 +47,7 @@ export class SchedulerComponent implements OnInit {
 
   ngOnChanges(changes) {
     Object.assign(this.schedulerOptions, this.options);
+    this.setWeek();
     this.setDaysOfWeek();
     this.optionsChanged.emit(changes);
   }
