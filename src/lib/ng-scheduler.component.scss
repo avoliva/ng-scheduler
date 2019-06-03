@@ -2,11 +2,8 @@ $employeeColumnWidth: 200px;
 $dayColumnWidth: 130px;
 $maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
 
-.scheduler-main {
-  .clearfix {
-    clear: both;
-  }
-  .date-switcher {
+.ngs-scheduler-main {
+  .ngs-date-switcher {
     margin: 10px 0;
     padding: 10px 0;
     & > div {
@@ -16,7 +13,8 @@ $maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
       margin-bottom: 20px;
       cursor: pointer;
     }
-    .arrow-left,.arrow-right {
+    .ngs-arrow-left,
+    .ngs-arrow-right {
       i {
         font-size: 10pt;
         color: #262626;
@@ -25,11 +23,11 @@ $maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
         padding: 0 5px;
       }
     }
-    .current-dates {
+    .ngs-current-dates {
       padding: 5px 15px;
       position: relative;
       width: 190px;
-      .overlay {
+      .ngs-overlay {
         position: absolute;
         z-index: 3;
         top: 0;
@@ -38,7 +36,7 @@ $maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
         height: 100%;
         background-color: white;
       }
-      .underlay {
+      .ngs-underlay {
         input {
           border: none;
         }
@@ -60,10 +58,10 @@ $maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
         opacity: 0.75;
       }
     }
-    .arrow-left {
+    .ngs-arrow-left {
       border-right: none;
     }
-    .arrow-right {
+    .ngs-arrow-right {
       border-left: none;
     }
   }
@@ -71,7 +69,7 @@ $maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
   p {
     font-family: "Helvetica";
   }
-  .empty-column {
+  .ngs-empty-column {
     width: $maxWidth;
     min-width: $maxWidth;
     display: table-cell;
@@ -79,29 +77,29 @@ $maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
     border-top: none;
     vertical-align: top;
     background-color: white;
-    .inner {
+    .ngs-inner {
       padding: 15px;
     }
   }
-  .employee-column {
+  .ngs-employee-column {
     width: $employeeColumnWidth;
     min-width: $employeeColumnWidth;
     display: table-cell;
     border: 1px solid #262626;
     vertical-align: top;
     background-color: white;
-    .inner {
+    .ngs-inner {
       padding-left: 35px;
-      .list-text,
-      .header-title {
+      .ngs-list-text,
+      .ngs-header-title {
         text-align: left;
       }
-      .header-title {
+      .ngs-header-title {
         padding-top: 10px;
       }
     }
   }
-  .day-column {
+  .ngs-day-column {
     width: $dayColumnWidth;
     min-width: $dayColumnWidth;
     display: table-cell;
@@ -110,46 +108,46 @@ $maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
     border-left: none;
     background-color: white;
   }
-  .header-row {
-    .day-column,
-    .employee-column {
+  .ngs-header-row {
+    .ngs-day-column,
+    .ngs-employee-column {
       background-color: #39454B;
-      .header-title {
+      .ngs-header-title {
         color: white;
         text-transform: uppercase;
         font-size: 10pt;
         letter-spacing: 0.09em;
       }
-      .header-subtitle {
+      .ngs-header-subtitle {
         color: white;
         font-size: 9pt;
         text-align: center;
       }
     }
   }
-  .inner {
+  .ngs-inner {
     padding: 5px;
   }
-  .header-title {
+  .ngs-header-title {
     font-weight: bold;
     font-size: 12pt;
     color: #262626;
     margin: 5px 0;
     text-align: center;
   }
-  .header-subtitle {
+  .ngs-header-subtitle {
     font-size: 10pt;
     color: #262626;
     opacity: 0.75;
     margin: 5px 0;
   }
-  .list-text {
+  .ngs-list-text {
     color: #262626;
     font-size: 11pt;
     margin: 5px 0;
     text-align: center;
   }
-  .list-subtext {
+  .ngs-list-subtext {
     color: #262626;
     font-size: 9pt;
     margin: 5px 0;
@@ -157,24 +155,24 @@ $maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
       margin-right: 10px;
     }
   }
-  .scheduler-row {
-    .day-column,
-    .employee-column {
+  .ngs-scheduler-row {
+    .ngs-day-column,
+    .ngs-employee-column {
       border-top: none;
     }
 
-    .employee-column {
-      .inner {
+    .ngs-employee-column {
+      .ngs-inner {
         padding-top: 15px;
         padding-bottom: 15px;
       }
     }
 
-    .day-column {
-      .inner {
+    .ngs-day-column {
+      .ngs-inner {
         padding: 0px;
       }
-      .list-text {
+      .ngs-list-text {
         color: #262626;
         font-size: 9pt;
         text-align: center;

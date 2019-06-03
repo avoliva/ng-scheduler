@@ -1,51 +1,51 @@
 
-<div class="scheduler-main">
+<div class="ngs-scheduler-main">
 
-  <div class="date-switcher">
-    <div class="arrow-left" (click)="changeDates(-7)"><i class="fa fa-chevron-left"></i></div>
-    <div class="current-dates" (click)="dp.toggleCalendar()">
-      <div class="overlay"><span><i class="fa fa-calendar"></i>{{formatDate(schedulerOptions.start_day, 'MMM D, YYYY')}} &mdash; {{formatDate(schedulerOptions.end_day, 'MMM D, YYYY')}}</span></div>
-      <div class="underlay">
+  <div class="ngs-date-switcher">
+    <div class="ngs-arrow-left" (click)="changeDates(-7)"><i class="fa fa-chevron-left"></i></div>
+    <div class="ngs-current-dates" (click)="dp.toggleCalendar()">
+      <div class="ngs-overlay"><span><i class="fa fa-calendar"></i>{{formatDate(schedulerOptions.start_day, 'MMM D, YYYY')}} &mdash; {{formatDate(schedulerOptions.end_day, 'MMM D, YYYY')}}</span></div>
+      <div class="ngs-underlay">
         <input class="form-control" placeholder="{{formatDate(schedulerOptions.start_day, 'MMM D, YYYY')}} - {{formatDate(schedulerOptions.end_day, 'MMM D, YYYY')}}" angular-mydatepicker name="mydate" [(ngModel)]="model" [options]="datePickerOptions" #dp="angular-mydatepicker" (dateChanged)="onDateChanged($event)" />
       </div>
     </div>
-    <div class="arrow-right" (click)="changeDates(7)"><i class="fa fa-chevron-right"></i></div>
+    <div class="ngs-arrow-right" (click)="changeDates(7)"><i class="fa fa-chevron-right"></i></div>
   </div>
-  <div class="clearfix"></div>
-  <div class="header-row">
-    <div class="employee-column">
-      <div class="inner">
-        <p class="header-title">Employees</p>
+  <div style="clear:both"></div>
+  <div class="ngs-header-row">
+    <div class="ngs-employee-column">
+      <div class="ngs-inner">
+        <p class="ngs-header-title">Employees</p>
       </div>
     </div>
-    <div class="day-column" *ngFor="let day of daysOfWeek">
-      <div class="inner">
-        <p class="header-title">{{formatDate(day, 'ddd')}}</p>
-        <p class="header-subtitle">{{formatDate(day, 'MMM D')}}</p>
+    <div class="ngs-day-column" *ngFor="let day of daysOfWeek">
+      <div class="ngs-inner">
+        <p class="ngs-header-title">{{formatDate(day, 'ddd')}}</p>
+        <p class="ngs-header-subtitle">{{formatDate(day, 'MMM D')}}</p>
       </div>
     </div>
   </div>
-  <div class="scheduler-row" *ngFor="let employee of schedulerOptions.employees; let i = index">
-    <div class="employee-column">
-      <div class="inner">
-        <p class="list-text"><strong>{{employee}}</strong></p>
-        <p class="list-subtext" *ngIf="schedulerOptions.showHours"><span *ngIf="schedulerOptions.showHours">{{getHours(i)}}</span></p>
-        <p class="list-subtext"><span *ngIf="schedulerOptions.showEarnings">${{getEarnings(i)}}</span></p>
+  <div class="ngs-scheduler-row" *ngFor="let employee of schedulerOptions.employees; let i = index">
+    <div class="ngs-employee-column">
+      <div class="ngs-inner">
+        <p class="ngs-list-text"><strong>{{employee}}</strong></p>
+        <p class="ngs-list-subtext" *ngIf="schedulerOptions.showHours"><span *ngIf="schedulerOptions.showHours">{{getHours(i)}}</span></p>
+        <p class="ngs-list-subtext"><span *ngIf="schedulerOptions.showEarnings">${{getEarnings(i)}}</span></p>
       </div>
     </div>
-    <div class="day-column" *ngFor="let day of daysOfWeek" (click)="onDateClick(day)">
-      <div class="inner">
-        <p class="list-text" (click)="onScheduleClick(shift)" *ngFor="let shift of getShifts(day, i)">
+    <div class="ngs-day-column" *ngFor="let day of daysOfWeek" (click)="onDateClick(day)">
+      <div class="ngs-inner">
+        <p class="ngs-list-text" (click)="onScheduleClick(shift)" *ngFor="let shift of getShifts(day, i)">
           <span>{{formatDate(shift.start_time, 'hA')}}</span> - <span *ngIf="shift.end_time">{{formatDate(shift.end_time, 'hA')}}</span><span *ngIf="!shift.end_time">Now</span>
         </p>
       </div>
     </div>
   </div>
 
-  <div class="scheduler-row" *ngIf="schedulerOptions.employees.length == 0">
-    <div class="empty-column">
-      <div class="inner">
-        <p class="list-text">No data to show</p>
+  <div class="ngs-scheduler-row" *ngIf="schedulerOptions.employees.length == 0">
+    <div class="ngs-empty-column">
+      <div class="ngs-inner">
+        <p class="ngs-list-text">No data to show</p>
       </div>
     </div>
   </div>
