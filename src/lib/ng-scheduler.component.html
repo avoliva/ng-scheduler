@@ -36,8 +36,16 @@
     <div class="day-column" *ngFor="let day of daysOfWeek" (click)="onDateClick(day)">
       <div class="inner">
         <p class="list-text" (click)="onScheduleClick(shift)" *ngFor="let shift of getShifts(day, i)">
-          {{formatDate(shift.start_time, 'hA')}} - {{formatDate(shift.end_time, 'hA')}}
+          <span>{{formatDate(shift.start_time, 'hA')}}</span> - <span *ngIf="shift.end_time">{{formatDate(shift.end_time, 'hA')}}</span><span *ngIf="!shift.end_time">Now</span>
         </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="scheduler-row" *ngIf="schedulerOptions.employees.length == 0">
+    <div class="empty-column">
+      <div class="inner">
+        <p class="list-text">No data to show</p>
       </div>
     </div>
   </div>

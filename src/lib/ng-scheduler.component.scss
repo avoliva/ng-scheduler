@@ -1,3 +1,7 @@
+$employeeColumnWidth: 200px;
+$dayColumnWidth: 130px;
+$maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
+
 .scheduler-main {
   .clearfix {
     clear: both;
@@ -63,13 +67,25 @@
       border-left: none;
     }
   }
-  width: 960px;
+  width: $maxWidth;
   p {
     font-family: "Helvetica";
   }
+  .empty-column {
+    width: $maxWidth;
+    min-width: $maxWidth;
+    display: table-cell;
+    border: 1px solid #262626;
+    border-top: none;
+    vertical-align: top;
+    background-color: white;
+    .inner {
+      padding: 15px;
+    }
+  }
   .employee-column {
-    width: 200px;
-    min-width: 200px;
+    width: $employeeColumnWidth;
+    min-width: $employeeColumnWidth;
     display: table-cell;
     border: 1px solid #262626;
     vertical-align: top;
@@ -86,8 +102,8 @@
     }
   }
   .day-column {
-    width: 130px;
-    min-width: 130px;
+    width: $dayColumnWidth;
+    min-width: $dayColumnWidth;
     display: table-cell;
     border: 1px solid #262626;
     vertical-align: top;
