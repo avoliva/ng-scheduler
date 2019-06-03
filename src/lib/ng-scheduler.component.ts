@@ -105,7 +105,8 @@ export class SchedulerComponent implements OnInit {
       }
     }
     let duration = moment.duration(hours, 'hours');
-    return `${duration.hours()}:${duration.minutes()}`;
+    let minutes = duration.minutes().toString().length < 2 ? duration.minutes().toString() + "0" : duration.minutes();
+    return `${duration.hours()}:${minutes}`;
   }
 
   public getEarnings(index): string {

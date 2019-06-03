@@ -1,6 +1,6 @@
 {
   "name": "ng-scheduler",
-  "version": "0.0.6a",
+  "version": "0.0.6-b",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
