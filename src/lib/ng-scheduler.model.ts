@@ -23,6 +23,7 @@ class SchedulerOptions {
   showEarnings: boolean;
   showHours: boolean;
   centerShifts: boolean;
+  daily: boolean;
 }
 
 class Scheduler {

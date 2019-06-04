@@ -25,6 +25,7 @@ export class SchedulerService {
     showEarnings: true,
     showHours: true,
     centerShifts: true,
+    daily: false,
   }
 
   public setDaysOfWeek(): void {

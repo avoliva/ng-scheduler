@@ -1,4 +1,4 @@
-<div class="ngs-date-switcher">
+<div class="ngs-date-switcher" [class.ngs-weekly-view]="viewType == 'weekly'">
   <div class="ngs-arrow-left" (click)="onPrev()"><i class="fa fa-chevron-left"></i></div>
   <div class="ngs-current-dates" (click)="dp.toggleCalendar()">
     <div class="ngs-overlay"><span><i class="fa fa-calendar"></i>{{placeholder}}</span></div>

@@ -1,5 +1,5 @@
-<div class="ngs-daily">
-  <date-switcher (prev)="changeDates(-1)" (next)="changeDates(1)" (dateChanged)="onDateChanged($event)" [placeholder]="formatDate(svc.referenceDay, 'MMMM Do, YYYY')"></date-switcher>
+<div class="ngs-daily" [class.show]="svc.schedulerOptions.daily">
+  <date-switcher (prev)="changeDates(-1)" (next)="changeDates(1)" (dateChanged)="onDateChanged($event)" [placeholder]="formatDate(svc.referenceDay, 'MMMM Do, YYYY')" [viewType]="'daily'"></date-switcher>
   <div class="ngs-header-row">
     <div class="ngs-employee-column">
       <div class="ngs-inner">

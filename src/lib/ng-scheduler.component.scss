@@ -8,9 +8,9 @@ $responsiveDayColumnWidth: 140px;
 $responsiveMaxWidth: $responsiveEmployeeColumnWidth + $dayColumnWidth + 2px;
 
 .ngs-date-switcher {
-  margin: 10px 0 10px $employeeColumnWidth;
-  @media(max-width: $responsiveWidth) {
-    margin-left: 0px;
+  margin: 10px 0 10px 0px; 
+  &.ngs-weekly-view {
+     margin-left: $employeeColumnWidth;
   }
   padding: 10px 0;
   & > div {
@@ -202,8 +202,11 @@ $responsiveMaxWidth: $responsiveEmployeeColumnWidth + $dayColumnWidth + 2px;
     }
   }
 
-  @media(max-width: $responsiveWidth) {
-    .ngs-weekly-scheduler {
+  .ngs-weekly-scheduler {
+    @media(max-width: $responsiveWidth) {
+      display: none;
+    }
+    &.hide {
       display: none;
     }
   }
@@ -213,6 +216,9 @@ $responsiveMaxWidth: $responsiveEmployeeColumnWidth + $dayColumnWidth + 2px;
 .ngs-daily {
   @media(min-width: $responsiveWidth+1px) {
     display: none;
+  }
+  &.show {
+    display: block !important;
   }
   .nys-date-switcher {
     margin-left: 0px;

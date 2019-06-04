@@ -9,7 +9,8 @@ import { IAngularMyDpOptions, IMyDateModel } from 'angular-mydatepicker';
 })
 export class DateSwitcherComponent {
 
-  @Input() placeholder;
+  @Input() placeholder: string;
+  @Input() viewType: string;
 
   @Output() prev = new EventEmitter<any>();
   public onPrev(): void {

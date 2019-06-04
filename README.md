@@ -1,8 +1,9 @@
 # Angular Scheduler
 
-Simple weekly schedule display. This is just a display. Adding shifts, employees, etc. would be handled on your end.
+Simple weekly schedule display. This is just a display. Adding shifts, employees, etc. would be handled on your end. Switches from weekly to daily based on browser size.
 
-![Example](https://i.ibb.co/0mrpTQj/Screen-Shot-2019-05-31-at-10-35-37-AM.png)
+![Weekly Example](https://i.ibb.co/GJB4gPc/Screen-Shot-2019-06-04-at-1-42-18-PM.png)
+![Daily Example](https://i.ibb.co/ZVWDWZ1/Screen-Shot-2019-06-04-at-1-42-28-PM.png)
 
 ## Installation
 
@@ -22,6 +23,7 @@ Add SchedulerComponent to your modules.
 * ``end_day`` (datetime, optional) - End of week. Default based on current week.
 * ``showEarnings`` (bool, optional) - Show earnings below employee name. Default `true`
 * ``showHours`` (bool, optional) - Show hours below employee name. Default `true`
+* ``daily`` (bool, optional, default false) - Force daily version.
 
 
 #### SchedulerShifts
