@@ -9,7 +9,7 @@ Simple weekly schedule display. This is just a display. Adding shifts, employees
 
 `npm install ng-scheduler`
 
-Add SchedulerComponent to your modules.
+Add SchedulerModule to your modules.
 
 `<ng-scheduler [options]="schedulerOptions"></ng-scheduler>` in your HTML.
 
