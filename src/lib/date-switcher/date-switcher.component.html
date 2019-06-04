@@ -1,0 +1,15 @@
+<div class="ngs-date-switcher">
+  <div class="ngs-arrow-left" (click)="onPrev()"><i class="fa fa-chevron-left"></i></div>
+  <div class="ngs-current-dates" (click)="dp.toggleCalendar()">
+    <div class="ngs-overlay"><span><i class="fa fa-calendar"></i>{{placeholder}}</span></div>
+    <div class="ngs-underlay">
+      <input class="form-control" placeholder="{{placeholder}}" angular-mydatepicker name="mydate" [(ngModel)]="model" [options]="datePickerOptions" #dp="angular-mydatepicker" (dateChanged)="onDateChanged($event)" />
+    </div>
+  </div>
+  <div class="ngs-arrow-right" (click)="onNext()"><i class="fa fa-chevron-right"></i></div>
+</div>
+<div style="clear:both"></div>
+
+<!-- {{formatDate(svc.schedulerOptions.start_day, 'MMM D, YYYY')}} &mdash; {{formatDate(svc.schedulerOptions.end_day, 'MMM D, YYYY')}} -->
+
+<!-- {{formatDate(svc.referenceDay, 'MMM D, YYYY')}} -->

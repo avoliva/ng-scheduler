@@ -2,69 +2,79 @@ $employeeColumnWidth: 200px;
 $dayColumnWidth: 130px;
 $maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
 
-.ngs-scheduler-main {
-  .ngs-date-switcher {
-    margin: 10px 0 10px 200px;
-    padding: 10px 0;
-    & > div {
-      float: left;
-      padding: 5px;
-      border: 1px solid rgba(0, 0, 0, 0.25);
-      margin-bottom: 20px;
-      cursor: pointer;
-    }
-    .ngs-arrow-left,
-    .ngs-arrow-right {
-      i {
-        font-size: 10pt;
-        color: #262626;
-        opacity: 0.65;
-        font-weight: 300;
-        padding: 0 5px;
-      }
-    }
-    .ngs-current-dates {
-      padding: 5px 15px;
-      position: relative;
-      width: 190px;
-      .ngs-overlay {
-        position: absolute;
-        z-index: 3;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: white;
-      }
-      .ngs-underlay {
-        input {
-          border: none;
-        }
-      }
-      span {
-        font-family: "Helvetica";
-        font-size: 10pt;
-        color: #262626;
-        display: block;
-        text-align: left;
-        padding-left: 10px;
-        margin-top: 6px;
-      }
-      i {
-        font-size: 10pt;
-        color: #262626;
-        font-weight: 300;
-        padding-right: 5px;
-        opacity: 0.75;
-      }
-    }
-    .ngs-arrow-left {
-      border-right: none;
-    }
-    .ngs-arrow-right {
-      border-left: none;
+$responsiveWidth: 720px;
+$responsiveEmployeeColumnWidth: 150px;
+$responsiveDayColumnWidth: 140px;
+$responsiveMaxWidth: $responsiveEmployeeColumnWidth + $dayColumnWidth + 2px;
+
+.ngs-date-switcher {
+  margin: 10px 0 10px $employeeColumnWidth;
+  @media(max-width: $responsiveWidth) {
+    margin-left: 0px;
+  }
+  padding: 10px 0;
+  & > div {
+    float: left;
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  .ngs-arrow-left,
+  .ngs-arrow-right {
+    i {
+      font-size: 10pt;
+      color: #262626;
+      opacity: 0.65;
+      font-weight: 300;
+      padding: 0 5px;
     }
   }
+  .ngs-current-dates {
+    padding: 5px 15px;
+    position: relative;
+    width: 190px;
+    .ngs-overlay {
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+    }
+    .ngs-underlay {
+      input {
+        border: none;
+      }
+    }
+    span {
+      font-family: "Helvetica";
+      font-size: 10pt;
+      color: #262626;
+      display: block;
+      text-align: left;
+      padding-left: 10px;
+      margin-top: 6px;
+    }
+    i {
+      font-size: 10pt;
+      color: #262626;
+      font-weight: 300;
+      padding-right: 5px;
+      opacity: 0.75;
+    }
+  }
+  .ngs-arrow-left {
+    border-right: none;
+  }
+  .ngs-arrow-right {
+    border-left: none;
+  }
+}
+
+.ngs-daily,
+.ngs-scheduler-main {
   width: $maxWidth;
   p {
     font-family: "Helvetica";
@@ -184,11 +194,35 @@ $maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
         font-size: 9pt;
         text-align: center;
         padding: 5px 0 3px 0px;
-        background-color: #F2D9A3;
+        background-color: #f9e9b7;
         margin-top: 0px;
         margin-bottom: 5px;
         cursor: pointer;
       }
     }
+  }
+
+  @media(max-width: $responsiveWidth) {
+    .ngs-weekly-scheduler {
+      display: none;
+    }
+  }
+
+}
+
+.ngs-daily {
+  @media(min-width: $responsiveWidth+1px) {
+    display: none;
+  }
+  .nys-date-switcher {
+    margin-left: 0px;
+  }
+  .ngs-employee-column {
+    min-width: $responsiveEmployeeColumnWidth;
+    width: $responsiveEmployeeColumnWidth;
+  }
+  .ngs-day-column {
+    min-width: $responsiveDayColumnWidth;
+    width: $responsiveDayColumnWidth;
   }
 }
