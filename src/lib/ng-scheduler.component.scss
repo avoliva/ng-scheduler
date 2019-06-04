@@ -75,7 +75,9 @@ $responsiveMaxWidth: $responsiveEmployeeColumnWidth + $responsiveDayColumnWidth 
 
 .ngs-daily,
 .ngs-scheduler-main {
-  width: $maxWidth;
+  .ngs-weekly-scheduler {
+    width: $maxWidth;
+  }
   p {
     font-family: "Helvetica";
   }
