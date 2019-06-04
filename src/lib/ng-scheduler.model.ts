@@ -16,6 +16,7 @@ class SchedulerOptions {
   end_day: moment.Moment;
   showEarnings: boolean;
   showHours: boolean;
+  centerShifts: boolean;
 }
 
 export {

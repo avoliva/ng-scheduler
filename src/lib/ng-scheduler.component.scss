@@ -4,7 +4,7 @@ $maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
 
 .ngs-scheduler-main {
   .ngs-date-switcher {
-    margin: 10px 0;
+    margin: 10px 0 10px 200px;
     padding: 10px 0;
     & > div {
       float: left;
@@ -162,6 +162,7 @@ $maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
     }
 
     .ngs-employee-column {
+      vertical-align: middle;
       .ngs-inner {
         padding-top: 15px;
         padding-bottom: 15px;
@@ -169,6 +170,12 @@ $maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
     }
 
     .ngs-day-column {
+      &.ngs-center-shifts {
+        vertical-align: middle;
+        .ngs-list-text {
+          margin-top: 5px;
+        }
+      }
       .ngs-inner {
         padding: 0px;
       }

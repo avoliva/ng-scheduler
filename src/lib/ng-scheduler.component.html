@@ -33,7 +33,7 @@
         <p class="ngs-list-subtext"><span *ngIf="schedulerOptions.showEarnings">${{getEarnings(i)}}</span></p>
       </div>
     </div>
-    <div class="ngs-day-column" *ngFor="let day of daysOfWeek" (click)="onDateClick(day)">
+    <div class="ngs-day-column" [class.ngs-center-shifts]="schedulerOptions.centerShifts" *ngFor="let day of daysOfWeek" (click)="onDateClick(day)">
       <div class="ngs-inner">
         <p class="ngs-list-text" (click)="onScheduleClick(shift)" *ngFor="let shift of getShifts(day, i)">
           <span>{{formatDate(shift.start_time, 'hA')}}</span> - <span *ngIf="shift.end_time">{{formatDate(shift.end_time, 'hA')}}</span><span *ngIf="!shift.end_time">Now</span>

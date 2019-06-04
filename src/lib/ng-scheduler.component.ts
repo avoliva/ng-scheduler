@@ -29,6 +29,7 @@ export class SchedulerComponent implements OnInit {
     end_day: this.referenceDay.clone().endOf('week'),
     showEarnings: true,
     showHours: true,
+    centerShifts: true,
   }
 
   @Output() optionsChanged = new EventEmitter<any>();
