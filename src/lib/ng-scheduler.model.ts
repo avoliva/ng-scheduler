@@ -8,7 +8,6 @@ const moment = moment_;
 
 class SchedulerShift {
   id: any;
-  name: string;
   start_time: moment_.Moment;
   end_time: moment_.Moment;
   hours?: number;

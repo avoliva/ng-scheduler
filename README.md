@@ -17,19 +17,19 @@ Add SchedulerComponent to your modules.
 
 #### Options
 
-* ``shifts`` (SchedulerShifts[]) - Array of SchedulerShifts
-* ``employees`` (string[]) - Array of strings
+* ``shifts`` (SchedulerShifts[]) - Array of SchedulerShifts.
+* ``employees`` (string[]) - Array of strings.
 * ``start_day`` (datetime, optional) - Start of week. Default based on current week. 
 * ``end_day`` (datetime, optional) - End of week. Default based on current week.
-* ``showEarnings`` (bool, optional) - Show earnings below employee name. Default `true`
-* ``showHours`` (bool, optional) - Show hours below employee name. Default `true`
-* ``daily`` (bool, optional, default false) - Force daily version.
+* ``showEarnings`` (bool, optional) - Show earnings below employee name. Default `true`.
+* ``showHours`` (bool, optional) - Show hours below employee name. Default `true`.
+* ``centerShifts``  (bool, optional) - Toggles whether shifts aligned at the top or middle. Default `true`.
+* ``daily`` (bool, optional) - Force daily version. Default `false`.
 
 
 #### SchedulerShifts
 
 * ``id`` (any, optional) - A unique identifier.
-* ``name`` (str) - Name of employee. Must match a name in `employees`.
 * ``start_time`` (datetime) - Start of shift.
 * ``end_time`` (datetime) - End of shift.
 * ``hours`` (decimal, optional) - Number of hours worked in decimal form.
