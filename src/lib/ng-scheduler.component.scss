@@ -5,10 +5,10 @@ $maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
 $responsiveWidth: 720px;
 $responsiveEmployeeColumnWidth: 150px;
 $responsiveDayColumnWidth: 140px;
-$responsiveMaxWidth: $responsiveEmployeeColumnWidth + $dayColumnWidth + 2px;
+$responsiveMaxWidth: $responsiveEmployeeColumnWidth + $responsiveDayColumnWidth + 2px;
 
 .ngs-date-switcher {
-  margin: 10px 0 10px 0px; 
+  margin: 10px 0; 
   &.ngs-weekly-view {
      margin-left: $employeeColumnWidth;
   }
@@ -214,6 +214,7 @@ $responsiveMaxWidth: $responsiveEmployeeColumnWidth + $dayColumnWidth + 2px;
 }
 
 .ngs-daily {
+  width: $responsiveMaxWidth;
   @media(min-width: $responsiveWidth+1px) {
     display: none;
   }
