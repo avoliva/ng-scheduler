@@ -20,4 +20,14 @@ export class SchedulerComponent extends Scheduler {
     super(svc)
   }
 
+  public changeDates(count): void {
+    this.svc.referenceDay = this.svc.referenceDay.clone().add(count, 'days');
+    this.svc.setWeek();
+    this.svc.setDaysOfWeek();
+    this.dateChanged.emit({
+      start_day: this.svc.schedulerOptions.start_day,
+      end_day: this.svc.schedulerOptions.end_day,
+    });
+  }
+
 }

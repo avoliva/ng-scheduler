@@ -57,16 +57,6 @@ class Scheduler {
     this.scheduleClicked.emit(shift);
   }
 
-  public changeDates(count): void {
-    this.svc.referenceDay = this.svc.referenceDay.clone().add(count, 'days');
-    this.svc.setWeek();
-    this.svc.setDaysOfWeek();
-    this.dateChanged.emit({
-      start_day: this.svc.schedulerOptions.start_day,
-      end_day: this.svc.schedulerOptions.end_day,
-    });
-  }
-
   public onDateChanged(event) {
     this.svc.referenceDay = moment(event.singleDate.jsDate);
     this.svc.setWeek();
