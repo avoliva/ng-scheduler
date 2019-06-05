@@ -5,7 +5,7 @@ $maxWidth: $employeeColumnWidth + ($dayColumnWidth * 7) + 7px;
 $responsiveWidth: 720px;
 $responsiveEmployeeColumnWidth: 150px;
 $responsiveDayColumnWidth: 140px;
-$responsiveMaxWidth: $responsiveEmployeeColumnWidth + $responsiveDayColumnWidth + 2px;
+$responsiveMaxWidth: $responsiveEmployeeColumnWidth + $responsiveDayColumnWidth + 1px;
 
 .ngs-date-switcher {
   margin: 10px 0; 
@@ -233,5 +233,9 @@ $responsiveMaxWidth: $responsiveEmployeeColumnWidth + $responsiveDayColumnWidth 
   .ngs-day-column {
     min-width: $responsiveDayColumnWidth;
     width: $responsiveDayColumnWidth;
+  }
+  .ngs-empty-column {
+    width: $responsiveMaxWidth;
+    min-width: $responsiveMaxWidth;
   }
 }
