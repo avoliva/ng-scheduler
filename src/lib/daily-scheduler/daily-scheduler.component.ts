@@ -18,8 +18,8 @@ export class DailySchedulerComponent extends Scheduler {
   public changeDates(count): void {
     this.svc.referenceDay = this.svc.referenceDay.clone().add(count, 'days');
     this.dateChanged.emit({
-      start_day: this.svc.schedulerOptions.start_day,
-      end_day: this.svc.schedulerOptions.end_day,
+      start_day: this.svc.referenceDay,
+      end_day: this.svc.referenceDay,
     });
   }
 
